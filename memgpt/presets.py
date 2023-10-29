@@ -41,7 +41,7 @@ def use_preset(preset_name, model, persona, human, interface, persistence_manage
             first_message_verify_mono=True if "gpt-4" in model else False,
         )
 
-    elif preset_name == "memgpt_files":
+    elif preset_name == "memgpt_extras":
         functions = [
             "send_message",
             "pause_heartbeats",
@@ -54,6 +54,8 @@ def use_preset(preset_name, model, persona, human, interface, persistence_manage
             # extra for read/write to files
             "read_from_text_file",
             "append_to_text_file",
+            # internet access
+            "http_request",
         ]
         available_functions = [v for k, v in gpt_functions.FUNCTIONS_CHAINING.items() if k in functions]
         printd(f"Available functions:\n", [x["name"] for x in available_functions])

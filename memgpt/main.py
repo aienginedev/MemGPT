@@ -305,7 +305,7 @@ async def main(
 
     memgpt_agent = presets.use_preset(
         # presets.DEFAULT,
-        "memgpt_files",
+        "memgpt_extras",
         cfg.model,
         personas.get_persona_text(*chosen_persona),
         humans.get_human_text(*chosen_human),
